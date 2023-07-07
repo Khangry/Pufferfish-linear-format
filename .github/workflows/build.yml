@@ -11,6 +11,11 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: 17
+      - name: Apply Patches
+        run: |
+          git config --global user.email "no-reply@github.com"
+          git config --global user.name "Github Actions"
+          ./gradlew applyPatches --stacktrace
       - name: Build Pufferfish
         run: ./gradlew build
       - name: Upload artifact
