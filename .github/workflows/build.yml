@@ -32,4 +32,4 @@ jobs:
           release_id: ${{ steps.create-release.outputs.id }}
           token: ${{ secrets.GITHUB_TOKEN }}
         env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
