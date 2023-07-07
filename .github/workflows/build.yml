@@ -11,13 +11,19 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: 17
+      - name: Setup Gradle
+        uses: gradle/gradle-build-action@v2
+
       - name: Apply Patches
         run: |
           git config --global user.email "no-reply@github.com"
           git config --global user.name "Github Actions"
           ./gradlew applyPatches --stacktrace
-      - name: Build Pufferfish
-        run: ./gradlew build
+      - name: Build
+        run: ./gradlew build --stacktrace
+      - name: Create Paperclip Jar
+        if: fromJSON(steps.determine.outputs.result).action == 'paperclip'
+        run: ./gradlew paperclip --stacktrace
       - name: Upload artifact
         uses: actions/upload-artifact@v3
         with:
