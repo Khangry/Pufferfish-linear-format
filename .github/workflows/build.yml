@@ -31,3 +31,5 @@ jobs:
           asset_name: paper-v${{ github.run_number }}.jar
           release_id: ${{ steps.create-release.outputs.id }}
           token: ${{ secrets.GITHUB_TOKEN }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
