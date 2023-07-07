@@ -14,7 +14,7 @@ index 2fb50b1ef8a77b9dac2b346ab2b50b1dcdf61889..67b6e5da5b623277e060981d4772ced6
      }
 +    implementation("com.github.luben:zstd-jni:1.4.4-2")
 +    implementation("org.lz4:lz4-java:1.8.0")
-     // LinearPaper end
+
      // Paper start
      implementation("org.jline:jline-terminal-jansi:3.21.0")
 diff --git a/src/main/java/io/papermc/paper/chunk/system/io/RegionFileIOThread.java b/src/main/java/io/papermc/paper/chunk/system/io/RegionFileIOThread.java
