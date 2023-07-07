@@ -13,8 +13,6 @@ jobs:
           java-version: 17
       - name: Build Pufferfish
         run: ./gradlew build
-      - name: check build folder
-        run: la & cd build/libs & ll
       - name: Upload artifact
         uses: actions/upload-artifact@v3
         with:
