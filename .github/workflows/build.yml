@@ -13,11 +13,13 @@ jobs:
           java-version: 17
       - name: Build Pufferfish
         run: ./gradlew build
+      - name: check build folder
+        run: la & cd build/libs & ll
       - name: Upload artifact
         uses: actions/upload-artifact@v3
         with:
           name: paper
-          path: build/libs/paper-*.jar
+          path: build/libs/*.jar
       - name: Create release
         uses: actions/create-release@v1
         with:
